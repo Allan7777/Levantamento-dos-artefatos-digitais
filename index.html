@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Levantamento de Atividades - PCA | Relatório Executivo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="top">
+<div class="kicker">Relatório Executivo • Levantamento de Atividades</div>
+<h1>Levantamento de Processos do PCA</h1>
+<div class="subtitle">Consolidação das atividades registradas nos processos de 2023 a 2026, com foco no acompanhamento de ETP, Termo de Referência e Minuta de Edital, além da distribuição por modalidade.</div>
+</div></header>
+<main>
+<section class="grid" id="metrics"></section>
+
+<section class="section"><h2>Visão geral</h2><div class="charts">
+<div class="panel chart"><h3>Processos registrados por ano</h3><div id="yearChart"></div></div>
+<div class="panel chart"><h3>Distribuição por modalidade</h3>
+<div class="donut-wrap">
+  <div class="donut" id="donutChart" title="Clique em uma modalidade"></div>
+  <div class="legend" id="modalLegend"></div>
+</div>
+<div class="chart-help">Clique em uma modalidade para filtrar os processos abaixo.</div>
+</div>
+</div></section>
+
+<section class="section"><h2>Principais resultados</h2><div class="insights" id="insights"></div></section>
+
+<section class="section"><h2>Desempenho por ano</h2><div class="panel"><div class="table-wrap"><table>
+<thead><tr><th>Ano</th><th>Processos</th><th>ETP concluído</th><th>TR concluído</th><th>Minuta concluída</th></tr></thead>
+<tbody id="yearTable"></tbody></table></div></div></section>
+
+<section class="section"><h2>Detalhamento dos processos</h2><div class="panel">
+<div class="toolbar">
+<input id="search" placeholder="Pesquisar objeto, NUP, modalidade ou status...">
+<select id="yearFilter"><option value="">Todos os anos</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select>
+<select id="modFilter"><option value="">Todas as modalidades</option><option>PE</option><option>DE</option><option>INEX</option><option>DISP</option></select>
+<button onclick="window.print()">Imprimir / Salvar PDF</button>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Ano</th><th>Objeto</th><th>NUP</th><th>Modalidade</th><th>ETP</th><th>Termo de Referência</th><th>Minuta de Edital</th></tr></thead>
+<tbody id="dataTable"></tbody></table></div>
+</div></section>
+<div class="footer">Documento elaborado a partir dos dados fornecidos para o levantamento. “FEITO” considera apenas registros com essa indicação exata; situações como “REVISAR”, “EM ANDAMENTO” e “EM MINUTA” permanecem destacadas como pendências/continuidade.</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
