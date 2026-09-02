@@ -46,7 +46,7 @@ button{border:0;background:var(--primary);color:#fff;padding:11px 14px;border-ra
 <header><div class="top">
 <div class="kicker">Relatório Executivo • Levantamento de Atividades</div>
 <h1>Levantamento de Processos do PCA</h1>
-<div class="subtitle">Consolidação de <strong>61 processos registrados</strong> de 2023 a 2026, com foco no acompanhamento de ETP, Termo de Referência e Minuta de Edital, além da distribuição por modalidade.</div>
+<div class="subtitle">Consolidação de <strong>61 processos registrados</strong> de 2023 a 2026, com foco no acompanhamento de ETP, Termo de Referência e Edital, além da distribuição por modalidade.</div>
 </div></header>
 <main>
 <section class="grid" id="metrics"></section>
@@ -65,7 +65,7 @@ button{border:0;background:var(--primary);color:#fff;padding:11px 14px;border-ra
 <section class="section"><h2>Principais resultados</h2><div class="insights" id="insights"></div></section>
 
 <section class="section"><h2>Desempenho por ano</h2><div class="panel"><div class="table-wrap"><table>
-<thead><tr><th>Ano</th><th>Processos</th><th>ETP concluído</th><th>ETP dispensado</th><th>TR concluído</th><th>Minuta concluída</th></tr></thead>
+<thead><tr><th>Ano</th><th>Processos</th><th>ETP concluído</th><th>ETP dispensado</th><th>TR concluído</th><th>Edital concluído</th></tr></thead>
 <tbody id="yearTable"></tbody></table></div></div></section>
 
 <section class="section"><h2>Detalhamento dos processos</h2><div class="panel">
@@ -75,7 +75,7 @@ button{border:0;background:var(--primary);color:#fff;padding:11px 14px;border-ra
 <select id="modFilter"><option value="">Todas as modalidades</option><option>PE</option><option>DE</option><option>INEX</option><option>DISP</option></select>
 <button onclick="window.print()">Imprimir / Salvar PDF</button>
 </div>
-<div class="table-wrap"><table><thead><tr><th>Ano</th><th>Objeto</th><th>NUP</th><th>Modalidade</th><th>ETP</th><th>Termo de Referência</th><th>Minuta de Edital</th></tr></thead>
+<div class="table-wrap"><table><thead><tr><th>Ano</th><th>Objeto</th><th>NUP</th><th>Modalidade</th><th>ETP</th><th>Termo de Referência</th><th>Edital</th></tr></thead>
 <tbody id="dataTable"></tbody></table></div>
 </div></section>
 <div class="footer">Documento elaborado a partir dos dados fornecidos para o levantamento. “FEITO” considera apenas registros com essa indicação exata; situações como “REVISAR”, “EM ANDAMENTO” e “EM MINUTA” permanecem destacadas como pendências/continuidade.</div>
@@ -98,7 +98,7 @@ document.getElementById("metrics").innerHTML=[
  [metrics.total,"Processos registrados",""],
  [metrics.etp,"ETPs indicados como feitos","accent"],
  [metrics.tr,"Termos de Referência feitos","accent"],
- [metrics.minuta,"Minutas de edital feitas","accent"],
+ [metrics.minuta,"Editais Feitos","accent"],
  [metrics.pregoes,"Pregões Eletrônicos (PE)","accent"],
  [metrics.naoNecessidade,"Com “NÃO TEM NECESSIDADE”",""],
  [metrics.naoTem,"Com “NÃO TEM”",""]
@@ -118,7 +118,7 @@ document.getElementById("insights").innerHTML=[
  </div>`,
  `<div class="insight">
    <div class="insight-title"><span class="insight-icon">✓</span>Produção documental</div>
-   <div class="stat-line"><span class="stat green"><b>${metrics.etp}</b> ETPs</span><span class="stat green"><b>${metrics.tr}</b> TRs</span><span class="stat green"><b>${metrics.minuta}</b> minutas</span></div>
+   <div class="stat-line"><span class="stat green"><b>${metrics.etp}</b> ETPs</span><span class="stat green"><b>${metrics.tr}</b> TRs</span><span class="stat green"><b>${metrics.minuta}</b> Editais</span></div>
    <p>Os indicadores representam os documentos registrados como <strong>FEITO</strong>. A base também permite identificar processos sem necessidade ou sem o documento correspondente.</p>
  </div>`,
  `<div class="insight">
