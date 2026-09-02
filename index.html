@@ -65,7 +65,7 @@ button{border:0;background:var(--primary);color:#fff;padding:11px 14px;border-ra
 <section class="section"><h2>Principais resultados</h2><div class="insights" id="insights"></div></section>
 
 <section class="section"><h2>Desempenho por ano</h2><div class="panel"><div class="table-wrap"><table>
-<thead><tr><th>Ano</th><th>Processos</th><th>ETP concluído</th><th>TR concluído</th><th>Minuta concluída</th></tr></thead>
+<thead><tr><th>Ano</th><th>Processos</th><th>ETP concluído</th><th>ETP dispensado</th><th>TR concluído</th><th>Minuta concluída</th></tr></thead>
 <tbody id="yearTable"></tbody></table></div></div></section>
 
 <section class="section"><h2>Detalhamento dos processos</h2><div class="panel">
@@ -194,7 +194,7 @@ renderModalidades();
 
 document.getElementById("yearTable").innerHTML=years.map(y=>{
  const rows=data.filter(r=>r[0]===y);
- return `<tr><td><b>${y}</b></td><td>${rows.length}</td><td>${rows.filter(r=>r[4]==="FEITO").length}</td><td>${rows.filter(r=>r[5]==="FEITO").length}</td><td>${rows.filter(r=>r[6]==="FEITO").length}</td></tr>`
+ return `<tr><td><b>${y}</b></td><td>${rows.length}</td><td>${rows.filter(r=>r[4]==="FEITO").length}</td><td>${rows.filter(r=>r[4]==="NÃO TEM NECESSIDADE").length}</td><td>${rows.filter(r=>r[5]==="FEITO").length}</td><td>${rows.filter(r=>r[6]==="FEITO").length}</td></tr>`
 }).join("");
 
 function badge(v){
